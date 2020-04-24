@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 
-namespace MsUnitTestSample.Apps
+namespace TestApps
 {
     public class Counter
     {

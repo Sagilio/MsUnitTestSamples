@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MsUnitTestSample.Apps;
 using System.Threading.Tasks;
+using TestApps;
 
 namespace MsUnitTestSamples
 {
