@@ -12,7 +12,12 @@ namespace TestApps
 
         public ValueTask<int> Count(params int[] num)
         {
-            return new ValueTask<int>(num.Length - 1);
+            return new ValueTask<int>(num.Length);
+        }
+
+        public ValueTask<int> AddByCount(int count, params int[] num)
+        {
+            return new ValueTask<int>(num.Take(count).Sum());
         }
     }
 }
