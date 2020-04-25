@@ -9,8 +9,8 @@ namespace NUnitTestSamples
 {
     [TestFixture]
     [AllureNUnit]
-    [AllureSubSuite("Counter_2")]
-    [AllureSeverity(SeverityLevel.critical)]
+    [AllureSuite("Counter_2")]
+    [AllureSeverity(SeverityLevel.blocker)]
     public class CounterTests2
     {
         private Counter Counter { get; } = new Counter();

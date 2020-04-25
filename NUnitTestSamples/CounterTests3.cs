@@ -9,7 +9,7 @@ namespace NUnitTestSamples
 {
     [TestFixture]
     [AllureNUnit]
-    [AllureSubSuite("Counter_3")]
+    [AllureSuite("Counter_3")]
     [AllureSeverity(SeverityLevel.critical)]
     public class CounterTests3
     {
@@ -22,9 +22,13 @@ namespace NUnitTestSamples
         }
 
         [Test]
-        [AllureTag("NUnit","Debug")]
-        [AllureIssue("GitHub#1", "https://github.com/unickq/allure-nunit")]
-        [AllureFeature("Core")]
+        [AllureTag("Regression")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureIssue("ISSUE-1")]
+        [AllureTms("TMS-12")]
+        [AllureOwner("User1")]
+        [AllureSuite("PassedSuite")]
+        [AllureSubSuite("NoAssert")]
         public async Task ShouldAdd()
         {
             const int i = 50;
@@ -36,9 +40,13 @@ namespace NUnitTestSamples
         }
 
         [Test]
-        [AllureTag("NUnit","Debug")]
-        [AllureIssue("GitHub#1", "https://github.com/unickq/allure-nunit")]
-        [AllureFeature("Core")]
+        [AllureTag("Regression")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureIssue("ISSUE-1")]
+        [AllureTms("TMS-12")]
+        [AllureOwner("User1")]
+        [AllureSuite("PassedSuite")]
+        [AllureSubSuite("NoAssert")]
         public async Task ShouldCount()
         {
             const int i = 50;
@@ -50,9 +58,13 @@ namespace NUnitTestSamples
         }
 
         [Test]
-        [AllureTag("NUnit","Debug")]
-        [AllureIssue("GitHub#1", "https://github.com/unickq/allure-nunit")]
-        [AllureFeature("Core")]
+        [AllureTag("Regression")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureIssue("ISSUE-1")]
+        [AllureTms("TMS-12")]
+        [AllureOwner("User2")]
+        [AllureSuite("PassedSuite")]
+        [AllureSubSuite("NoAssert")]
         public async Task ShouldAddByCount()
         {
             const int i = 50;
