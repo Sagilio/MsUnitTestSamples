@@ -1,3 +1,4 @@
+using System;
 using Allure.Commons;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
@@ -9,11 +10,11 @@ namespace NUnitTestSamples
 {
     [TestFixture]
     [AllureNUnit]
-    [AllureSuite("Counter")]
+    [AllureSuite("AddCounter")]
     [AllureSeverity(SeverityLevel.critical)]
-    public class CounterTests
+    public class AddCounterTests
     {
-        private Counter Counter { get; } = new Counter();
+        private AddCounter Counter { get; } = new AddCounter();
 
         [SetUp]
         public void Setup()
@@ -22,45 +23,51 @@ namespace NUnitTestSamples
         }
 
         [Test]
-        [AllureTag("NUnit","Debug")]
-        [AllureIssue("GitHub#1", "https://github.com/unickq/allure-nunit")]
         [AllureFeature("Core")]
         public async Task ShouldAdd()
         {
             const int i = 5;
             const int j = 6;
             const int result = 11;
+            Console.WriteLine($"input values : i = {i} j = {j};");
+            Console.WriteLine($"output except : result = {result};");
 
-            var output = await Counter.Add(i, j);
+            var output = await Counter.AddAsync(i, j);
+            Console.WriteLine($"output actual : result = {output};");
+
             Assert.AreEqual(result, output);
         }
 
         [Test]
-        [AllureTag("NUnit","Debug")]
-        [AllureIssue("GitHub#1", "https://github.com/unickq/allure-nunit")]
         [AllureFeature("Core")]
         public async Task ShouldCount()
         {
             const int i = 5;
             const int j = 6;
             const int result = 2;
+            Console.WriteLine($"input values : i = {i} j = {j};");
+            Console.WriteLine($"output except : result = {result};");
 
-            var output = await Counter.Count(i, j);
+            var output = await Counter.CountAsync(i, j);
+            Console.WriteLine($"output actual : result = {output};");
+
             Assert.AreEqual(result, output);
         }
 
         [Test]
-        [AllureTag("NUnit","Debug")]
-        [AllureIssue("GitHub#1", "https://github.com/unickq/allure-nunit")]
         [AllureFeature("Core")]
         public async Task ShouldAddByCount()
         {
             const int i = 5;
             const int j = 6;
             const int result = 5;
+            Console.WriteLine($"input values : i = {i} j = {j};");
+            Console.WriteLine($"output except : result = {result};");
 
-            var output = await Counter.AddByCount(1,i, j);
-            Assert.AreEqual(result + 1, output);
+            var output = await Counter.AddByCountAsync(1,i, j);
+            Console.WriteLine($"output actual : result = {output + 1};");
+
+            Assert.AreEqual(result, output + 1);
         }
     }
 }

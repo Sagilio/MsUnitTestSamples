@@ -7,7 +7,7 @@ namespace MsUnitTestSamples
     [TestClass]
     public class CountTest
     {
-        private Counter Counter { get; } = new Counter();
+        private AddCounter Counter { get; } = new AddCounter();
 
         [TestMethod]
         public async Task ShouldAdd()
@@ -16,7 +16,7 @@ namespace MsUnitTestSamples
             const int j = 6;
             const int result = 11;
 
-            var output = await Counter.Add(i, j);
+            var output = await Counter.AddAsync(i, j);
             Assert.AreEqual(result, output);
         }
 
@@ -27,7 +27,7 @@ namespace MsUnitTestSamples
             const int j = 6;
             const int result = 2;
 
-            var output = await Counter.Count(i,j);
+            var output = await Counter.CountAsync(i,j);
             Assert.AreEqual(result, output);
         }
     }
